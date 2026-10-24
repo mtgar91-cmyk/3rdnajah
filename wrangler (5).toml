@@ -1,0 +1,19 @@
+name = "results-site"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# قاعدة التخزين (KV) - أنشئها بالأمر:
+#   npx wrangler kv namespace create DB
+# ثم ضع الـ id الذي يظهر لك هنا
+[[kv_namespaces]]
+binding = "DB"
+id = "PUT_YOUR_KV_NAMESPACE_ID_HERE"
+
+[vars]
+# معرّفات حسابات تيليجرام المسموح لها باستخدام البوت (افصل بفاصلة)
+# لمعرفة معرّفك: أرسل أي رسالة للبوت وسيرد عليك بمعرّفك
+ADMIN_IDS = "123456789"
+
+# الأسرار تُضاف بالأوامر (لا تكتبها هنا):
+#   npx wrangler secret put BOT_TOKEN        <- توكن البوت من BotFather
+#   npx wrangler secret put WEBHOOK_SECRET   <- أي كلمة طويلة (حروف وأرقام و _ - فقط)
